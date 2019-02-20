@@ -1,5 +1,4 @@
 import config from './config'
-import { message } from 'antd'
 
 const {HOST} = config
 

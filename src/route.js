@@ -6,6 +6,10 @@ import Login from './login'
 import Main from './main'
 
 const routeConfig = [
+	{ path: '/',
+		exact: true,
+		component: Login,
+	},
 	{
 		path: '/login',
 		component: Login,
@@ -19,7 +23,7 @@ const routeConfig = [
 export const history = createBrowserHistory()
 
 const RouteWithSubRoutes = (route) => (
-	<Route path={route.path} render={props => (
+	<Route exact path={route.path} render={props => (
 		<route.component {...props} />
 	)}/>
 )
