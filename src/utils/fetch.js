@@ -22,5 +22,5 @@ export default async function FetchUtil (url, req) {
 	const res = await fetch(url, merge)
 	const resJSON = await res.json()
 	console.log('返回->' + JSON.stringify(resJSON))
-	message.warn(JSON.stringify(resJSON));
+	return resJSON;
 }

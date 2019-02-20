@@ -16,7 +16,7 @@ const routeConfig = [
 	}
 ]
 
-const history = createBrowserHistory()
+export const history = createBrowserHistory()
 
 const RouteWithSubRoutes = (route) => (
 	<Route path={route.path} render={props => (

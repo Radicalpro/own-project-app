@@ -1,7 +1,8 @@
 import React from 'react'
-import { Button, Checkbox, Form, Icon, Input } from 'antd'
+import { Button, Checkbox, Form, Icon, Input, message } from 'antd'
 import './index.css'
 import { login } from './webapi'
+import { history } from '../route'
 
 class Login extends React.Component {
 
@@ -10,7 +11,14 @@ class Login extends React.Component {
 		this.props.form.validateFields(async (err, values) => {
 			if (!err) {
 				console.log('Received values of form: ', values)
-				await login(values)
+				const result = await login(values)
+				console.log(result)
+				console.log(result.code)
+				if (result.code === 0) {
+					history.push('/main')
+				}else {
+					message.warn(result.message);
+				}
 			}
 		})
 	}
