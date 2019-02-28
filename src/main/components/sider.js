@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Icon, Layout, Menu } from 'antd'
+import { Link } from 'react-router-dom'
 
 const {
 	Sider
@@ -42,7 +43,7 @@ export default class MySider extends React.Component {
 					onOpenChange={this.onOpenChange}
 				>
 					<SubMenu key="sub1" title={<span><Icon type="user"/><span>用户管理</span></span>}>
-						<Menu.Item key="1">用户列表</Menu.Item>
+						<Menu.Item key="1"><Link to="/user/list">用户列表</Link></Menu.Item>
 						<Menu.Item key="3">新增用户</Menu.Item>
 						<Menu.Item key="2">绑定角色</Menu.Item>
 					</SubMenu>
